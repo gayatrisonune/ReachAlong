@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import Navbar from './components/Navbar';
+import Navbar from './Navbar';
 
 export default function Home() {
   return (
