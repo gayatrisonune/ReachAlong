@@ -40,7 +40,8 @@ export default function Signup() {
   return (
     <>
       <Container style={{ display: "flex", flexDirection: "column", gap: "1.5em", alignItems: "center" }}>
-        <Paper style={{ display: "center", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "30%", marginTop: "15%", height: "20em", boxShadow: "5px 10px #888888", }}>
+        <Paper style={{ display: "center", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "30%", marginTop: "15%", height: "20em" }}
+          elevation={20}>
           <form noValidate autoComplete="off" onSubmit={handleSubmit}>
             <Grid style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2em", marginTop: "4%" }}>
               <Grid item xs={12}>
@@ -105,5 +106,5 @@ export default function Signup() {
       </Container>
     </>
 
-  )
+  );
 }

@@ -5,7 +5,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "./VideoSidebar.css"
 function VideoSidebar({ likes, share, msg }) {
-  const [liked, setliked] = setliked(true);
+  const [liked, setliked] = React.useState(true);
   return (
 
     <div className='videoSidebar'>

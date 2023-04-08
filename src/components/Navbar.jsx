@@ -16,8 +16,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 const drawerWidth = 240;
 // const usestyles = makeStyles({
@@ -84,9 +86,11 @@ export default function Navbar() {
     };
 
     return (
-        <Box sx={{ display: 'flex' }} >
+        <Box sx={{
+            display: 'flex'
+        }} >
             <CssBaseline />
-            <AppBar position="fixed" open={open}>
+            <AppBar position="fixed" open={open} style={{ background: "#0B2447" }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -98,7 +102,7 @@ export default function Navbar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Persistent drawer
+                        ReachAlong
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -110,25 +114,25 @@ export default function Navbar() {
                         width: drawerWidth,
                         color: 'black',
                         boxSizing: 'border-box',
+                        background: "#0B2447",
                     },
                 }}
-                // classes={{ paper: usestyles.paper }}
                 variant="persistent"
                 anchor="left"
                 open={open}
             >
                 <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton onClick={handleDrawerClose} style={{ color: "white" }}>
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    {['Home', 'Video'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                <ListItemIcon style={{ color: "white" }}>
+                                    {index % 2 === 0 ? <HomeIcon /> : <OndemandVideoIcon />}
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
                             </ListItemButton>
@@ -137,11 +141,11 @@ export default function Navbar() {
                 </List>
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                    {['Subscriptions', 'Profile'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                <ListItemIcon style={{ color: "white" }}>
+                                    {index % 2 === 0 ? <SubscriptionsIcon /> : <AccountBoxIcon />}
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
                             </ListItemButton>
@@ -153,5 +157,6 @@ export default function Navbar() {
                 <DrawerHeader />
             </Main>
         </Box >
+
     );
 }
