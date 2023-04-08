@@ -20,7 +20,12 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
 const drawerWidth = 240;
-
+// const usestyles = makeStyles({
+//     paper: {
+//         background: "linear-gradient(to right, #33ccff 0%, #ff99cc 37%)",
+//         color: "white"
+//     }
+// })
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         flexGrow: 1,
@@ -79,7 +84,7 @@ export default function Navbar() {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }} >
             <CssBaseline />
             <AppBar position="fixed" open={open}>
                 <Toolbar>
@@ -107,6 +112,7 @@ export default function Navbar() {
                         boxSizing: 'border-box',
                     },
                 }}
+                // classes={{ paper: usestyles.paper }}
                 variant="persistent"
                 anchor="left"
                 open={open}
@@ -146,6 +152,6 @@ export default function Navbar() {
             <Main open={open}>
                 <DrawerHeader />
             </Main>
-        </Box>
+        </Box >
     );
 }
