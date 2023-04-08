@@ -1,4 +1,5 @@
 import React from 'react'
+import Videofooter from './components/Videofooter'
 // import { Routes, Route } from "react-router-dom";
 import { useState } from 'react'
 import Home from './components/Home'
