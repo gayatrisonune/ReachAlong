@@ -103,6 +103,7 @@ export default function Navbar() {
                     flexShrink: 0,
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
+                        color: 'black',
                         boxSizing: 'border-box',
                     },
                 }}
