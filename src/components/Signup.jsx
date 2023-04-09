@@ -85,7 +85,7 @@ export default function Signup() {
                   type="submit"
                   variant="outlined"
                   color="success"
-                  style={{ backgroundColor: "blue", color: "whitesmoke" }}
+                  style={{ backgroundColor: "#0B2447", color: "whitesmoke" }}
                 >
                   Sign Up
                 </Button>
@@ -94,7 +94,10 @@ export default function Signup() {
           </form>
         </Paper>
 
-        <Button variant="outlined" color="success" style={{ alignSelf: "center", background: " linear-gradient(to right, #33ccff 25%, #ff99cc 37%)", border: "solid white", gap: "1em", color: "black" }} >
+        <Button variant="outlined" color="success" style={{
+          alignSelf: "center",
+          background: " linear-gradient(to right, #33ccff 25%, #ff99cc 37%)", border: "solid white", gap: "1em", color: "black"
+        }} >
           <GoogleIcon /> Sign in with Google
         </Button>
         <Typography style={{ color: "black" }}>Already have an account?

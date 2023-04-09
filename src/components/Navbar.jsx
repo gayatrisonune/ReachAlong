@@ -21,6 +21,9 @@ import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
+import { useNavigate } from 'react-router-dom';
+
+
 const drawerWidth = 240;
 // const usestyles = makeStyles({
 //     paper: {
@@ -28,6 +31,9 @@ const drawerWidth = 240;
 //         color: "white"
 //     }
 // })
+
+
+
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         flexGrow: 1,
@@ -84,13 +90,25 @@ export default function Navbar() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-
+    const Navigate = useNavigate();
+    const ClickedHome = (event) => {
+        Navigate('/home')
+        console.log('clicked')
+    }
+    const ClickedVideo = (event) => {
+        Navigate('/video')
+        console.log('clickedvideo')
+    }
+    const ClickedProfile = (event) => {
+        Navigate('/profile')
+        console.log('clickedprofile')
+    }
     return (
         <Box sx={{
             display: 'flex'
         }} >
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ background: "#0B2447" }}>
+            <AppBar position="fixed" open={open} style={{ background: 'linear-gradient(45deg, #1d3d82, #07265e, #03112b)', animation: 'gradient 20s ease infinite' }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -132,7 +150,7 @@ export default function Navbar() {
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
                                 <ListItemIcon style={{ color: "white" }}>
-                                    {index % 2 === 0 ? <HomeIcon /> : <OndemandVideoIcon />}
+                                    {index % 2 === 0 ? <HomeIcon onClick={(event) => ClickedHome(event)} /> : <OndemandVideoIcon onClick={(event) => ClickedVideo(event)} />}
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
                             </ListItemButton>
@@ -145,7 +163,7 @@ export default function Navbar() {
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
                                 <ListItemIcon style={{ color: "white" }}>
-                                    {index % 2 === 0 ? <SubscriptionsIcon /> : <AccountBoxIcon />}
+                                    {index % 2 === 0 ? <SubscriptionsIcon /> : <AccountBoxIcon onClick={(event) => ClickedProfile(event)} />}
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
                             </ListItemButton>

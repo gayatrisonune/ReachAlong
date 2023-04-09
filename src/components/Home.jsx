@@ -26,7 +26,7 @@ export default function Home() {
             variant="outlined"
             style={{
               height: "50%",
-              background: " linear-gradient(to right, #33ccff 0%, #ff99cc 37%)",
+              background: "linear-gradient(to right, #1d3d82 0%, #07265e 37%)",
               border: "solid white",
             }}
           >
@@ -34,9 +34,8 @@ export default function Home() {
               to="/Signup"
               style={{
                 textDecoration: "none",
-                color: "black",
-                background:
-                  " linear-gradient(to right, #33ccff 0%, #ff99cc 37%)",
+                color: "white",
+                background: "linear-gradient(to right, #1d3d82 0%, #07265e 37%)",
               }}
             >
               Create Account
@@ -49,7 +48,7 @@ export default function Home() {
             style={{
               height: "50%",
               background:
-                " linear-gradient(to right, #33ccff 25%, #ff99cc 37%)",
+                "linear-gradient(to right, #1d3d82 0%, #07265e 37%)",
               border: "solid white",
             }}
           >
@@ -57,9 +56,9 @@ export default function Home() {
               to="/Login"
               style={{
                 textDecoration: "none",
-                color: "black",
+                color: "white",
                 background:
-                  " linear-gradient(to right, #33ccff 0%, #ff99cc 37%)",
+                  " linear-gradient(to right, #1d3d82 0%, #07265e 37%)",
               }}
             >
               Log in
