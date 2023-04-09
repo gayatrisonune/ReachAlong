@@ -16,10 +16,23 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+
+import { useNavigate } from 'react-router-dom';
+
 
 const drawerWidth = 240;
+// const usestyles = makeStyles({
+//     paper: {
+//         background: "linear-gradient(to right, #33ccff 0%, #ff99cc 37%)",
+//         color: "white"
+//     }
+// })
+
+
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
@@ -77,11 +90,25 @@ export default function Navbar() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-
+    const Navigate = useNavigate();
+    const ClickedHome = (event) => {
+        Navigate('/home')
+        console.log('clicked')
+    }
+    const ClickedVideo = (event) => {
+        Navigate('/video')
+        console.log('clickedvideo')
+    }
+    const ClickedProfile = (event) => {
+        Navigate('/profile')
+        console.log('clickedprofile')
+    }
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{
+            display: 'flex'
+        }} >
             <CssBaseline />
-            <AppBar position="fixed" open={open}>
+            <AppBar position="fixed" open={open} style={{ background: 'linear-gradient(45deg, #1d3d82, #07265e, #03112b)', animation: 'gradient 20s ease infinite' }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -93,7 +120,7 @@ export default function Navbar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Persistent drawer
+                        ReachAlong
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -105,6 +132,7 @@ export default function Navbar() {
                         width: drawerWidth,
                         color: 'black',
                         boxSizing: 'border-box',
+                        background: "#0B2447",
                     },
                 }}
                 variant="persistent"
@@ -112,17 +140,17 @@ export default function Navbar() {
                 open={open}
             >
                 <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton onClick={handleDrawerClose} style={{ color: "white" }}>
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    {['Home', 'Video'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                <ListItemIcon style={{ color: "white" }}>
+                                    {index % 2 === 0 ? <HomeIcon onClick={(event) => ClickedHome(event)} /> : <OndemandVideoIcon onClick={(event) => ClickedVideo(event)} />}
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
                             </ListItemButton>
@@ -131,11 +159,11 @@ export default function Navbar() {
                 </List>
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                    {['Subscriptions', 'Profile'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                <ListItemIcon style={{ color: "white" }}>
+                                    {index % 2 === 0 ? <SubscriptionsIcon /> : <AccountBoxIcon onClick={(event) => ClickedProfile(event)} />}
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
                             </ListItemButton>
@@ -146,6 +174,7 @@ export default function Navbar() {
             <Main open={open}>
                 <DrawerHeader />
             </Main>
-        </Box>
+        </Box >
+
     );
 }
