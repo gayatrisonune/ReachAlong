@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import EditProfile from './components/EditProfile'
 import Profile from './components/Profile'
 // import Landpage from './components/Landpage'
-// import Video from './components/Video'
+import Video from './components/Video'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,7 +25,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/profile' element={<Profile />} />
-        {/* <Route path='/video' element={<Video chanel={sas} desc={hjkhbkbk} song={bjbkb} url={" "} likes={12} share={234} msg={234} />} /> */}
+        <Route path='/video' element={<Video chanel={"sass"} desc={"hgjhgug"} song={"sdsfsdcsd"} url={"https://www.youtube.com/watch?v=Zf__nAYMuqw"} likes={12} share={234} msg={234} />} />
       </Routes>
 
     </div>

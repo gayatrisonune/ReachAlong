@@ -18,7 +18,7 @@ import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
-
+import Person2Icon from '@mui/icons-material/Person2'
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import TheatersIcon from '@mui/icons-material/Theaters';
 
@@ -62,8 +62,8 @@ export default function Profile() {
                         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                         <ListItem>
                             <ListItemAvatar>
-                            <Avatar>
-                                <ImageIcon />
+                            <Avatar style={{color:'black'}}>
+                                <TheatersIcon />
                             </Avatar>
                             </ListItemAvatar >
                             <ListItemText 
@@ -72,15 +72,15 @@ export default function Profile() {
                         <ListItem>
                             <ListItemAvatar>
                             <Avatar>
-                                <WorkIcon />
+                                <SubscriptionsIcon style={{color:'black'}}/>
                             </Avatar>
                             </ListItemAvatar>
                             <ListItemText primary="Subscriber" secondary="2014" />
                         </ListItem>
                         <ListItem>
-                            <ListItemAvatar>
-                            <Avatar>
-                                <BeachAccessIcon />
+                            <ListItemAvatar >
+                            <Avatar style={{color:'black'}}>
+                                <Person2Icon />
                             </Avatar>
                             </ListItemAvatar>
                             <ListItemText primary="About" secondary="myhappylife" />
